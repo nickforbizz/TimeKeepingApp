@@ -133,8 +133,11 @@ class Timekeeping extends Component {
     if(this.state.countDown)
       this.setState({ countDownValue: this.fixedTo(t, 1) });
     else
-      if(this.state.running)
+      if(this.state.running){
         this.setState({ time: this.fixedTo(t, 1) });
+        // send data to server
+        // this.saveStateToJsonFile()
+      }
   }
 
   start(tick) {
